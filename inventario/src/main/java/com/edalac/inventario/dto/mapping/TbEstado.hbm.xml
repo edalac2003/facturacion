@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbEstado" table="tb_estado" optimistic-lock="version">
+        <id name="nbIdestado" type="long">
+            <column name="nb_idestado" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrDescripcion" type="string">
+            <column name="vr_descripcion" length="50" not-null="true" />
+        </property>
+        <set name="tbTerceros" table="tb_tercero" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nb_estado" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.edalac.inventario.dto.TbTercero" />
+        </set>
+    </class>
+</hibernate-mapping>

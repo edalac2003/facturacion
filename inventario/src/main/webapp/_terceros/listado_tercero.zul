@@ -1,0 +1,43 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Listado Terceros" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="none">
+		<borderlayout height="650px">
+			<north height="15%" border="none">
+				<div align="center">
+				</div>				
+			</north>
+			<center border="none">
+				<borderlayout>
+					<west width="10%" border="none">
+						<div align="center">
+							
+						</div>						
+					</west>
+					<center border="none" apply="${ctrlListarTerceros}">
+						<div align="center">
+							<listbox id="listadoTerceros">
+								<listhead>
+									<listheader label="Nit" align="center" width="15%" />
+									<listheader label="Apellidos" align="center" width="20%" />
+									<listheader label="Nombres" align="center" width="20%" />
+									<listheader label="Email" align="center" width="25%" />
+									<listheader label="Ciudad" align="center" width="20%" />
+								</listhead>
+							</listbox>
+							
+						</div>						
+					</center>
+					<east width="10%" border="none">
+						<div align="center">
+						
+						</div>						
+					</east>
+				</borderlayout>
+			</center>
+			<south height="30%" border="none">
+			
+			</south>
+		</borderlayout>
+	</window>
+</zk>

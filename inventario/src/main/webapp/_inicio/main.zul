@@ -1,0 +1,14 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Principal" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="none">
+	<borderlayout width="100%" height="650px">
+		<north height="100px" id="encabezado"></north>
+		
+		<west width="20%" id="barraIzquierda"></west>
+		
+		<center id="contenido"></center>
+		
+	</borderlayout>
+</window>
+</zk>

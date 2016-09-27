@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbArticulo" table="tb_articulo" optimistic-lock="version">
+        <id name="nbIdarticulo" type="long">
+            <column name="nb_idarticulo" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbEmpresa" class="com.edalac.inventario.dto.TbEmpresa" fetch="join">
+            <column name="nb_empresa" precision="11" scale="0" />
+        </many-to-one>
+        <property name="vrCodigoArticulo" type="string">
+            <column name="vr_codigo_articulo" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="vrDescripcion" type="string">
+            <column name="vr_descripcion" />
+        </property>
+        <property name="nbCantidad" type="java.lang.Long">
+            <column name="nb_cantidad" precision="11" scale="0" />
+        </property>
+        <property name="nbStockminimo" type="java.lang.Long">
+            <column name="nb_stockminimo" precision="11" scale="0" />
+        </property>
+        <property name="nbStockmaximo" type="java.lang.Long">
+            <column name="nb_stockmaximo" precision="11" scale="0" />
+        </property>
+        <property name="nbEstado" type="java.lang.Boolean">
+            <column name="nb_estado" />
+        </property>
+        <set name="tbDetalleFacturas" table="tb_detalle_factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nb_articulo" precision="15" scale="0" />
+            </key>
+            <one-to-many class="com.edalac.inventario.dto.TbDetalleFactura" />
+        </set>
+    </class>
+</hibernate-mapping>

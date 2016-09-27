@@ -1,0 +1,228 @@
+@CHARSET "ISO-8859-1";
+
+.estiloceldas{
+	font-size: 9px;
+	padding: 0 5px;
+}
+
+.titulos{
+/* 	color: Red; */
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	font-size: medium;
+	color : red;
+	margin: px;
+	padding: 5px;
+	text-align: center;
+	height: 40;
+	width: px;
+	font-style: normal
+}
+
+.tituloSession{
+	color: #FF8000;
+	font-size: large;
+	font-weighzmt: bolder;
+	margin: 5px;
+	padding: 5
+}
+
+
+.resaltado{
+	color: Red;
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	text-align: center;
+	font-style: normal;
+}
+
+.resaltadonormal{
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+}
+
+.campoobligatorio{
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	color: Red;
+}
+
+.z-toolbar a, .z-toolbar a:visited, .z-toolbar a:hover {
+    background-color: AliceBlue;
+	height: 40px;
+	padding: 5px;
+	font-style: normal;
+	font-weight: bold;
+	color: Black;
+	font-family: Tahoma, Calibri, Arial;
+	font-size: x-small;
+	margin: 2
+}
+
+.vista {
+    background: #004000;
+    color: Black;
+    padding-top: 4;
+	font-size: small;
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	height: 35px;
+	background-color: AliceBlue;
+	font-style: normal;
+	padding: 3px;
+	margin: 3;
+	border-color: Black;
+	border-style: solid;
+	border-width: thin
+}
+
+.p-vista .z-panel-children {
+    background-color: Aquamarine;
+    border-bottom: 0 none;
+}
+
+.z-groupbox {
+	background-color: White
+}
+
+.z-groupbox-div {
+	background-color: White
+}
+
+.z-borderlayout{
+	background-color: Silver
+}
+
+.z-north{
+	background-color: White
+}
+.z-east{
+	background-color: White
+}
+
+.z-west{
+	background-color: White
+}
+
+.z-center{
+	background-color: White
+}
+
+.z-south{
+	background-color: White
+}
+
+.tituloFondo{
+	height: 10px;
+	text-align: center;
+	color: #004000;
+	font-size: x-large;
+	width: 900px;
+	margin: 5;
+	font-family: Calibri, Tahoma, Arial;
+	font-weight: bolder;
+	padding: 10;
+	border-bottom: 10
+}
+
+.tituloPrincipal{
+	color: White;
+	font-size: 48px;
+	font-family: Times New Roman, Tahoma
+}
+
+.nombreSeccion{
+	color: #FF8000;
+	font-size: 18px;
+	font-family: Arial, Calibri, Tahoma;
+	font-weight: normal;
+	margin: 4px
+}
+
+.contenidoSeccion{
+	font-size: x-small;
+	font-family: Calibri, Calibri Light, Tahoma, Arial;
+	margin: 4px;
+	text-align: justify;
+}
+
+.fuenteChica{
+	font-size: x-small;
+	font-family: Calibri, Tahoma, Arial
+}
+
+.fondoEncabezado{
+	background-color: #004000;
+	border-color: #004000;
+	border-width: medium
+}
+
+.fondoPagina{
+	background-image: url("./../_img/background/libros01.jpg");
+}
+
+.fondoNormal{
+	background-color: White
+}
+
+.backgroundVerde{
+	background: #14470e; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #14470e 0%, #2c961c 51%, #14470e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#14470e), color-stop(51%,#2c961c), color-stop(100%,#14470e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #14470e 0%,#2c961c 51%,#14470e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #14470e 0%,#2c961c 51%,#14470e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #14470e 0%,#2c961c 51%,#14470e 100%); /* IE10+ */
+	background: linear-gradient(135deg, #14470e 0%,#2c961c 51%,#14470e 100%); /* W3C */
+	filter: ="#14470e", GradientType =1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.imageBack {
+	background-image: url("./../_img/background/backgroundVerde.png")
+}
+
+.div_fecha{
+	color: #fff;
+/* 	z-index: 50; */
+	width: 960px;
+/* 	background-color: rgba(0, 0, 0, 0.6); */
+	font-size: 18px;
+	padding: 5px 0px 5px 0px;
+	margin: 0 auto;
+}
+
+.subir_margen{
+	margin: -15px 0 5px 0;
+}
+
+.cab_izquierda{
+	width: 35px;
+	text-align: left;
+	float: left;
+	margin: 0 0 5px 5px;
+	border-right-color: #FFF;
+	border-right-style: solid;
+	border-right-width: 1px; 
+}
+
+.cab_centro{
+	width: 40%px;
+	text-align: left;
+	float: left;
+	margin: 0 0 5px 5px;
+}
+
+.cab_derecha{
+	width: 40%;
+	text-align: right;
+	float: right;
+	margin: 0 5px 5px 0;
+}
+
+.enlace_salir{
+	color: #FFF;
+	text-decoration: none;
+}
+
+:HOVER.enlace_salir{
+	text-decoration: underline;
+}

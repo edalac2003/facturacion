@@ -1,0 +1,57 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Inicio" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/_css/estilos.css" ?>
+
+<zk>
+	<window border="none">
+		<borderlayout height="650px">
+			<north height="25%" border="none">
+				<div align="center">
+				</div>				
+			</north>
+			<center border="none">
+				<borderlayout width="900px">
+					<east width="30%" border="none">
+						
+					</east>
+					<center border="none">
+						<div align="center" width="450px">
+							<vbox sclass="fondoNormal">
+						 		<groupbox width="380px" mold="3d" closable="false" >
+						 			<caption>
+						 				<image src="http://icons.iconarchive.com/icons/simiographics/secure/48/PadLock-icon.png" />
+						 				<label value="Inicio de Sesion" sclass="tituloSession"></label>
+						 			</caption>
+						 			<div height="10px"></div>
+						 			<div align="center" height="50px">
+						 				<div height="20px">
+						 					<label value="Nombre de Usuario"></label>
+						 				</div>					 				
+					 					<textbox id="txtNombreUsuario" width="200px" />					 									 				
+						 			</div>						
+						 			<div align="center" height="60px">
+						 				<div height="20px">
+						 					<label value="Contraseña" width="200px"	></label>
+						 				</div>
+						 				<textbox id="txtPassword" type="password" width="200px"/>					 								 				
+						 			</div>
+						 			<div height="50px" align="center" sclass="fondoNormal">
+						 				<hbox align="center" height="50px">
+						 					<button id="btnAceptar" label="Aceptar" width="150px" />
+						 					<button id="btnOlvido" label="¿Olvido su Contraseña?"  width="150px" />
+						 				</hbox>					 				
+						 			</div>
+								</groupbox>
+							</vbox>						
+						</div>
+					</center>
+					<west width="35%" border="none">
+					</west>
+				</borderlayout>
+			</center>
+			<south height="30%" border="none">
+			
+			</south>
+		</borderlayout>
+	</window>
+</zk>

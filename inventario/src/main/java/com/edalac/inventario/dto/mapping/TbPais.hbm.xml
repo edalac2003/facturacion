@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbPais" table="tb_pais" optimistic-lock="version">
+        <id name="nbIdpais" type="long">
+            <column name="nb_idpais" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrNombre" type="string">
+            <column name="vr_nombre" length="128" not-null="true" />
+        </property>
+        <set name="tbDepartamentos" table="tb_departamento" inverse="true" lazy="false" fetch="subselect">
+            <key>
+                <column name="nb_pais" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.edalac.inventario.dto.TbDepartamento" />
+        </set>
+    </class>
+</hibernate-mapping>

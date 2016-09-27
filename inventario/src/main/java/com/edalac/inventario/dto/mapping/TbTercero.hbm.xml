@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbTercero" table="tb_tercero" optimistic-lock="version">
+        <id name="nbIdpersona" type="long">
+            <column name="nb_idpersona" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbCiudad" class="com.edalac.inventario.dto.TbCiudad" fetch="join">
+            <column name="nb_ciudad" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbEstado" class="com.edalac.inventario.dto.TbEstado" fetch="join">
+            <column name="nb_estado" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbTipodocumento" class="com.edalac.inventario.dto.TbTipodocumento" fetch="join">
+            <column name="nb_tipodocumento" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbTipopersona" class="com.edalac.inventario.dto.TbTipopersona" fetch="join">
+            <column name="nb_tipopersona" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrApellidos" type="string">
+            <column name="vr_apellidos" length="128" />
+        </property>
+        <property name="vrNombres" type="string">
+            <column name="vr_nombres" length="128" not-null="true" />
+        </property>
+        <property name="vrRazonSocial" type="string">
+            <column name="vr_razon_social" />
+        </property>
+        <property name="vrDireccion" type="string">
+            <column name="vr_direccion" length="128" />
+        </property>
+        <property name="vrEmail" type="string">
+            <column name="vr_email" length="64" />
+        </property>
+        <property name="nbNit" type="java.lang.Long">
+            <column name="nb_nit" precision="11" scale="0" />
+        </property>
+        <property name="nbDigitoverificacion" type="java.lang.Integer">
+            <column name="nb_digitoverificacion" />
+        </property>
+        <property name="vrTelefono" type="string">
+            <column name="vr_telefono" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>

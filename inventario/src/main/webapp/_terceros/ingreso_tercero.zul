@@ -1,0 +1,136 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Ingreso Terceros" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="none">
+		<borderlayout height="650px">
+			<north height="15%" border="none">
+				<div align="center">
+				</div>				
+			</north>
+			<center border="none">
+				<borderlayout>
+					<west width="20%" border="none">
+						<div align="center">
+							
+						</div>						
+					</west>
+					<center border="none" apply="${ctrlIngresoTercero}">
+						<div align="left">
+							<groupbox width="80%" mold="3d">
+								<caption>
+									<image src="http://icons.iconarchive.com/icons/icojam/blue-bits/32/user-add-icon.png"/>
+									<label value="Información de Terceros" style="font-weight:bold"/>								
+								</caption>
+								<grid>
+									<columns>
+										<column width="15%" align="right"/>
+										<column width="35%" />
+										<column width="15%" align="right"/>
+										<column width="35%" />
+									</columns>
+									<rows>
+										<row>
+											<div>
+												<label value="Tipo Identificacion" />												
+											</div>	
+											<div>
+												<combobox id="cmbTipoIdentificacion" />
+											</div>
+											<div>
+												<label value="ID / Nit" />												
+											</div>
+											<div>
+												<decimalbox format="###" id="nbNumeroId" width="120px" />
+												<label value="DV" />												
+												<decimalbox format="###" id="nbDigitoVerificacion" width="30px"	/>												
+											</div>																					
+										</row>
+										<row>
+											<div>
+												<label value="Nombres" />
+											</div>
+											<div>											
+												<textbox id="txtNombres"  width="95%"/>
+											</div>
+											<div>												
+												<label value="Apellidos" />												
+											</div>
+											<div>
+												<textbox id="txtApellidos"  width="95%"/>
+											</div>											
+										</row>
+										<row>
+											<div>
+												<label value="Direccion" />												
+											</div>
+											<div>
+												<textbox id="txtDireccion" width="95%"/>
+											</div>
+											<div>
+												<label value="Email" />												
+											</div>
+											<div>
+												<textbox id="txtEmail" width="95%"  />
+											</div>		
+										</row>
+										<row>
+											<div>
+												<label value="Telefono" />
+											</div>
+											<div>
+												<decimalbox id="nbTelefono" format="###" width="80%"/>
+											</div>
+											<div>
+												<label value="Tipo Tercero" />
+											</div>
+											<div>
+												<combobox id="cmbTipoTercero"  />
+											</div>
+										</row>
+										<row>
+											<div>
+												<label value="Pais" />
+											</div>
+											<div>
+												<combobox id="cmbPais" width="80%"/>
+											</div>
+											<div>
+												<label value="Departamento" />
+											</div>
+											<div>
+												<combobox id="cmbDepartamento" width="80%"/>	
+											</div>
+										</row>
+										<row>
+											<div>
+												<label value="Ciudad" />
+											</div>
+											<div>
+												<combobox id="cmbCiudad"  width="80%"/>
+											</div>
+										</row>
+									</rows>
+								</grid>
+								<div align="right" style="">
+									<hbox align="center" height="40px" style="padding:5px">
+										<button id="btnGuardar" label="Guardar" 
+										image="http://icons.iconarchive.com/icons/tpdkdesign.net/refresh-cl/32/Hardware-Floppy-icon.png"/>
+									</hbox>
+									
+								</div>
+							</groupbox>
+						</div>						
+					</center>
+					<east width="10%" border="none">
+						<div align="center">
+						
+						</div>						
+					</east>
+				</borderlayout>
+			</center>
+			<south height="30%" border="none">
+			
+			</south>
+		</borderlayout>
+	</window>
+</zk>

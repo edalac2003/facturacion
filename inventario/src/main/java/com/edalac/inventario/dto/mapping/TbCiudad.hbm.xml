@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbCiudad" table="tb_ciudad" optimistic-lock="version">
+        <id name="nbIdciudad" type="long">
+            <column name="nb_idciudad" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbDepartamento" class="com.edalac.inventario.dto.TbDepartamento" fetch="join">
+            <column name="nb_departamento" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrNombre" type="string">
+            <column name="vr_nombre" length="128" not-null="true" />
+        </property>
+        <set name="tbTerceros" table="tb_tercero" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nb_ciudad" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.edalac.inventario.dto.TbTercero" />
+        </set>
+    </class>
+</hibernate-mapping>

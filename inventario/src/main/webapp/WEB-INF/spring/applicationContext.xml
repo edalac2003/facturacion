@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+        
+        <!-- BEANS  CONFIGURACION DATASOURCE-->
+        
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://localhost:3306/inventario" />
+			<property name="username" value="root" />
+			<property name="password" value="root" />
+		</bean>
+        
+        <!-- BEANS CONFIGURACION HIBERNATE-->
+        <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="mappingResources">
+				<list>
+					<value>com/edalac/inventario/dto/mapping/TbArticulo.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbCiudad.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbDepartamento.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbDetalleFactura.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbEmpresa.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbEstado.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbPais.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbRol.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbTercero.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbTipodocumento.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbTipopersona.hbm.xml</value>
+					<value>com/edalac/inventario/dto/mapping/TbUsuario.hbm.xml</value>
+				</list>
+			</property>
+	            
+			<property name="hibernateProperties">
+				<props>
+					<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+					<prop key="hibernate.show_sql">false</prop>
+					<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+				</props>
+			</property>       
+        </bean>
+		
+		
+		<!-- SE CREAN LOS BEANS CORRESPONDIENTES A LOS DAO's -->
+		<bean id="paisDao" class="com.edalac.inventario.dao.hibernate.PaisDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        <bean id="departamentoDao" class="com.edalac.inventario.dao.hibernate.DepartamentoDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        <bean id="ciudadDao" class="com.edalac.inventario.dao.hibernate.CiudadDAOHibernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+        <bean id="terceroDao" class="com.edalac.inventario.dao.hibernate.TerceroDAOHIbernate">
+        	<property name="sessionFactory" ref="sessionFactory" />
+        </bean>
+
+		<!-- AQUI SE DEFINEN LOS BEANS CORRESPONDIENTES A LA LOGICA -->		
+		<bean id="paisNGC" class="com.edalac.inventario.ngc.impl.PaisNGCImpl">
+        	<property name="paisDao" ref="paisDao" />
+        </bean>
+        <bean id="departamentoNGC" class="com.edalac.inventario.ngc.impl.DepartamentoNGCImpl">
+        	<property name="departamentoDao" ref="departamentoDao" />
+        	<property name="paisDao" ref="paisDao" />
+        </bean>
+        <bean id="ciudadNGC" class="com.edalac.inventario.ngc.impl.CiudadNGCImpl">
+        	<property name="ciudadDao" ref="ciudadDao" />
+        	<property name="departamentoDao" ref="departamentoDao" />
+        </bean>
+        <bean id="terceroNGC" class="com.edalac.inventario.ngc.impl.TerceroNGCImpl">
+        	<property name="terceroDao" ref="terceroDao" />
+        </bean>
+        
+        <!-- AQUI SE DEFINEN LOS BEANS CORRESPONDIENTES A LOS CONTROLADORES -->
+        <bean id="ctrlIngresoTercero" class="com.edalac.inventario.controller.CtrlIngresoTercero">
+        	<property name="paisNgc" ref="paisNGC" />
+        	<property name="dptoNgc" ref="departamentoNGC" />
+        	<property name="ciudadNgc" ref="ciudadNGC" />
+        	<property name="terceroNgc" ref="terceroNGC" />
+        </bean>
+        
+        <bean id="ctrlListarTerceros" class="com.edalac.inventario.controller.CtrlListarTerceros">
+        	<property name="terceroNgc" ref="terceroNGC" /> 
+        </bean>
+        
+        
+
+</beans>

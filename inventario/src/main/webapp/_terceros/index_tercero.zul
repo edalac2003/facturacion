@@ -1,0 +1,55 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Main Terceros" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window border="none">
+		<borderlayout height="650px">
+			<north height="15%" border="none">
+				<div align="center">
+				</div>				
+			</north>
+			<center border="none">
+				<borderlayout>
+					<west width="33%" border="none">
+						<div align="center">
+							<groupbox width="80%" mold="3d">
+								<caption>
+									<image src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/48/User-Group-icon.png" />
+									<label value="Terceros" />								
+								</caption>
+								<div>
+									<button width="90%" height="60px" label="Entrar" />								
+								</div>
+							</groupbox>
+						</div>						
+					</west>
+					<center border="none">
+						<div align="center">
+							<groupbox width="80%" mold="3d">
+								<caption>
+									<image src="http://icons.iconarchive.com/icons/petalart/business/48/box-download-icon.png" />
+									<label value="Articulos" />								
+								</caption>
+								<button width="90%" height="60px" label="Entrar" />	
+							</groupbox>
+						</div>						
+					</center>
+					<east width="33%" border="none">
+						<div align="center">
+							<groupbox width="80%" mold="3d">
+								<caption>
+									<image src="http://icons.iconarchive.com/icons/ebiene/e-commerce/48/cash-register-icon.png" />
+									<label value="Facturas" />								
+								</caption>
+								<button width="90%" height="60px" label="Entrar" />	
+							</groupbox>
+						</div>
+						
+					</east>
+				</borderlayout>
+			</center>
+			<south height="30%" border="none">
+			
+			</south>
+		</borderlayout>
+	</window>
+</zk>

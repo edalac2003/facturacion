@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbTipodocumento" table="tb_tipodocumento" optimistic-lock="version">
+        <id name="ndIdTipoDocumento" type="long">
+            <column name="nd_idTipoDocumento" precision="11" scale="0" />
+            <generator class="increment" />
+        </id>
+        <property name="vrNombre" type="string">
+            <column name="vr_nombre" length="8" not-null="false" />
+        </property>
+        <property name="vrDescripcion" type="string">
+            <column name="vr_descripcion" length="64" not-null="false" />
+        </property>
+        <set name="tbTerceros" table="tb_tercero" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nb_tipodocumento" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.edalac.inventario.dto.TbTercero" />
+        </set>
+    </class>
+</hibernate-mapping>

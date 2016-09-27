@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-jun-2016 21:10:30 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.inventario.dto.TbUsuario" table="tb_usuario" optimistic-lock="version">
+        <id name="nbIdusuario" type="long">
+            <column name="nb_idusuario" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbRol" class="com.edalac.inventario.dto.TbRol" fetch="select">
+            <column name="nb_rol" precision="11" scale="0" />
+        </many-to-one>
+        <property name="vrUsuario" type="string">
+            <column name="vr_usuario" length="64" />
+        </property>
+        <property name="vrPasswd" type="string">
+            <column name="vr_passwd" length="512" />
+        </property>
+        <property name="nbEmpresa" type="java.lang.Long">
+            <column name="nb_empresa" precision="11" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
